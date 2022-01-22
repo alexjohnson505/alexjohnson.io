@@ -1,0 +1,11 @@
+####################### Banner #########################
+style: "style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right"
+title : "Alex Johnson"
+subtitle: |
+  Head of Product @ <a href="https://learnlux.com/" target="_blank">LearnLux</a>
+content : |
+  Product Development and Frontend Engineer. Graduated from Northeastern University with a degree in Computer Science & Interactive Media. When not online, I am biking around Boston, playing with cameras, eating Thai food, or playing Ultimate Frisbee. 
+button:
+  label : "Connect on LinkedIn"
+  link : "https://www.linkedin.com/in/alexjohnson505/"
+image : "images/banner.jpg"

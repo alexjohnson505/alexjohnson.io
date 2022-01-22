@@ -7,19 +7,30 @@
 	{{ if .Site.Params.favicon }}
 	{{ partial "template/favicon" }}
 	{{ end }}
-	<!-- CSS -->
+
+	<!-- SCSS -->
+	{{ $styles := resources.Get "sass/styles.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+	<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+	<!-- Development Mode -->
 	{{ if .Site.IsServer }}
-	{{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | toCSS (dict "targetPath" "assets/css/main.css" "outputStyle" "compressed" "enableSourceMap" false) }}
-	<link rel="stylesheet" href="{{ ($style).RelPermalink }}">
+		{{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | toCSS (dict "targetPath" "assets/css/main.css" "outputStyle" "compressed" "enableSourceMap" false) }}
+		<link rel="stylesheet" href="{{ ($style).RelPermalink }}">
+
+	<!-- Production Mode -->
 	{{ else }}
-	{{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | toCSS (dict "targetPath" "assets/css/main.css" "enableSourceMap" false) }}
-	<link rel="stylesheet" href="{{ ($style | minify).RelPermalink }}">
+		{{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | toCSS (dict "targetPath" "assets/css/main.css" "enableSourceMap" false) }}
+		<link rel="stylesheet" href="{{ ($style | minify).RelPermalink }}">
 	{{ end }}
+	
+	<!-- Development Mode -->
 	{{ if .Site.IsServer }}
-	{{ $noscript := resources.Get "sass/noscript.scss" | resources.ExecuteAsTemplate "noscript.scss" . | toCSS (dict "targetPath" "assets/css/noscript.css" "enableSourceMap" false) }}
-	<noscript><link rel="stylesheet" href="{{ ($noscript).RelPermalink }}" /></noscript>
+		{{ $noscript := resources.Get "sass/noscript.scss" | resources.ExecuteAsTemplate "noscript.scss" . | toCSS (dict "targetPath" "assets/css/noscript.css" "enableSourceMap" false) }}
+		<noscript><link rel="stylesheet" href="{{ ($noscript).RelPermalink }}" /></noscript>
+	
+	<!-- Production Mode -->
 	{{ else }}
-	{{ $noscript := resources.Get "sass/noscript.scss" | resources.ExecuteAsTemplate "noscript.scss" . | toCSS (dict "targetPath" "assets/css/noscript.css" "enableSourceMap" false) }}
-	<noscript><link rel="stylesheet" href="{{ ($noscript | minify).RelPermalink }}" /></noscript>
+		{{ $noscript := resources.Get "sass/noscript.scss" | resources.ExecuteAsTemplate "noscript.scss" . | toCSS (dict "targetPath" "assets/css/noscript.css" "enableSourceMap" false) }}
+		<noscript><link rel="stylesheet" href="{{ ($noscript | minify).RelPermalink }}" /></noscript>
 	{{end}}
 </head>

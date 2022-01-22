@@ -5,13 +5,12 @@
 title = "alexjohnson.io"
 theme = "hugo-story"
 
-
 ## -----------------------------------------------
 ## Hugo Built-in Features
 ## -----------------------------------------------
 
 disableKinds = ["taxonomy", "taxonomyTerm", "section"]
-# googleAnalytics = "UA-44813077"
+googleAnalytics = "UA-44813077"
 
 ## -----------------------------------------------
 ## Site Parameters
@@ -24,7 +23,8 @@ disableKinds = ["taxonomy", "taxonomyTerm", "section"]
 
 [Params.social]
   github = "https://github.com/alexjohnson505"
-  email = "alex@learnlux.com"
   instagram = "https://instagram.com/alexjohnson505"
   linkedin = "https://www.linkedin.com/in/alexjohnson505"
   stackoverflow = "https://stackoverflow.com/users/1508105/alex-johnson"
+
+assetDir = "/assets"

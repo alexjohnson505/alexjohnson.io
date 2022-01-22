@@ -8,4 +8,11 @@ content : |
 button:
   label : "Connect on LinkedIn"
   link : "https://www.linkedin.com/in/alexjohnson505/"
-image : "images/banner.jpg"
+image : 
+  url: "images/banner.jpg"
+  tag : "Chile, 2018"
+social:
+  github : "https://github.com/alexjohnson505"
+  instagram : "https://instagram.com/alexjohnson505"
+  linkedin : "https://www.linkedin.com/in/alexjohnson505"
+  stackoverflow : "https://stackoverflow.com/users/1508105/alex-johnson"

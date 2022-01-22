@@ -48,9 +48,10 @@ To upload to Amazon S3, we recommend [Cyberduck](https://cyberduck.io/) or [3Hub
 
 ### Built With
 
-* [Bootstrap](http://getbootstrap.com/)
 * [Hugo](https://gohugo.io/)
+* [Hugo Story](https://github.com/caressofsteel/hugo-story)
+* [FontAwesome](https://fontawesome.com/)
 
 ### Contributors
 
-* Alex Johnson -[@alexjohnson505](https://github.com/alexjohnson505)
+* Alex Johnson - [@alexjohnson505](https://github.com/alexjohnson505)

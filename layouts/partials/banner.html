@@ -11,13 +11,16 @@
         {{ end }}
 
         <ul class="icons">
-            {{ with .Site.Params.social.github }}<li><a target="_blank" href="{{.}}" class="icon brands style2 fa-github"><span class="label">Github</span></a></li>{{end}}
-            {{ with .Site.Params.social.instagram }}<li><a target="_blank" href="{{.}}" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>{{end}}
-            {{ with .Site.Params.social.linkedin }}<li><a target="_blank" href="{{.}}" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>{{end}}
+            {{ with .social.github }}<li><a target="_blank" href="{{.}}" class="icon brands style2 fa-github"><span class="label">Github</span></a></li>{{end}}
+            {{ with .social.instagram }}<li><a target="_blank" href="{{.}}" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>{{end}}
+            {{ with .social.linkedin }}<li><a target="_blank" href="{{.}}" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>{{end}}
+            {{ with .social.stackoverflow }}<li><a target="_blank" href="{{.}}" class="icon brands style2 fa-stack-overflow"><span class="label">StackOverflow</span></a></li>{{end}}
         </ul>
-
     </div>
-    {{ with .image }}<div class="image">
-        <img src="{{.}}" alt="Hugo Story" />
-    </div>{{end}}
+    {{ with .image }}
+        <div class="image">
+            <div class="tag">{{.tag}}</div>
+            <img src="{{.url}}" alt="Hugo Story" />
+        </div>
+    {{end}}
 </section>
